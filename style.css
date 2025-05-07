@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a; /* Nền tối cho hiệu ứng nổi bật */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Căn trên cùng */
+    min-height: 100vh;
+    overflow: hidden; /* Ngăn cuộn khi hiệu ứng tràn */
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #00ffff; /* Màu neon */
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #00ffff;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap; /* Xuống dòng trên màn hình nhỏ */
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Khoảng cách giữa các nhóm control */
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.input-group, .select-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00b3b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    font-size: 1rem;
+}
+
+.button:hover {
+    background-color: #008080;
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+#imageInput {
+    display: none; /* Ẩn input file mặc định */
+}
+
+#fileNameDisplay {
+    font-style: italic;
+    color: #cccccc;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Hiển thị dấu ... nếu tên file quá dài */
+}
+
+select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #00b3b3;
+    background-color: #333;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none;
+    border-color: #00ffff;
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+/* Style cho nút generate */
+#generateButton {
+    background-color: #ff6600; /* Ví dụ: màu cam nổi bật */
+    /* Có thể thêm margin-left hoặc điều chỉnh gap trong controls nếu cần */
+}
+
+#generateButton:hover {
+    background-color: #cc5200;
+}
+
+
+#threejs-container {
+    width: 100%;
+    /* Chiều cao linh hoạt, chiếm phần còn lại của màn hình */
+    /* Tùy chỉnh chiều cao này nếu muốn cố định kích thước canvas */
+    min-height: 500px; /* Chiều cao tối thiểu cho canvas */
+    flex-grow: 1; /* Cho phép container này mở rộng */
+    position: relative; /* Quan trọng cho việc định vị canvas tuyệt đối */
+    margin-top: 20px;
+}
+
+#threejs-container canvas {
+     display: block; /* Loại bỏ khoảng trống dưới canvas */
+     position: absolute; /* Đặt canvas tuyệt đối trong container */
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+}
+
+.loading, .error {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: none; /* Mặc định ẩn */
+}
+
+.loading {
+    background-color: rgba(0, 255, 255, 0.1);
+    color: #00ffff;
+}
+
+.error {
+    background-color: rgba(255, 0, 0, 0.1);
+    color: #ff6666;
+}

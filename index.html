@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ảnh Hiệu Ứng 3D - Three.js</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Import Three.js từ CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.159.0/three.min.js"></script>
+    <!-- Có thể cần các module phụ như OrbitControls nếu muốn điều khiển camera -->
+    <!-- <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script> -->
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hiệu Ứng Ảnh 3D Với Three.js</h1>
+
+        <div class="controls">
+            <div class="input-group">
+                <label for="imageInput" class="button">Chọn Ảnh</label>
+                <input type="file" id="imageInput" accept="image/*">
+                <span id="fileNameDisplay">Chưa có ảnh nào được chọn</span>
+            </div>
+
+            <div class="select-group">
+                 <label for="effectSelect">Chọn Hiệu Ứng:</label>
+                 <select id="effectSelect">
+                    <option value="particles">Hạt Chuyển Động (Mặc Định)</option>
+                    <option value="pixelExplosion">Pixel Explosion</option>
+                    <option value="galaxyTwist">Galaxy Twist</option>
+                    <option value="lightWave">Sóng Ánh Sáng</option>
+                    <option value="shapes">Các Hình Khối</option>
+
+                    <!-- Các hiệu ứng mới được mô tả chi tiết -->
+                    <option value="liquidWave">Chất Lỏng/Gợn Sóng</option>
+                    <option value="dissolveMelt">Tan Chảy/Biến Mất</option>
+                    <option value="scannerWipe">Quét/Lộ Dần</option>
+                    <option value="shatter">Đổ Vỡ/Tách Mảnh</option>
+                    <option value="displacementMap">Ảnh 3D (Theo Độ Sáng)</option> <!-- Tên hiệu ứng 3D Depth -->
+                    <option value="glitch">Glitch</option>
+                    <option value="drawingPainting">Vẽ/Tô Màu</option>
+
+                    <!-- Các hiệu ứng giữ lại từ yêu cầu trước -->
+                     <option value="imageMorphing">Image Morphing (Biến đổi)</option>
+                     <option value="particleAttraction">Hạt Hấp Dẫn</option>
+
+                 </select>
+            </div>
+
+            <button id="generateButton" class="button">Tạo Hiệu Ứng</button>
+
+        </div>
+
+        <div id="threejs-container">
+            <!-- Three.js sẽ tạo canvas tại đây -->
+        </div>
+
+        <div id="loading-message" class="loading"></div>
+        <div id="error-message" class="error"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
